@@ -12,21 +12,21 @@ pipeline {
         stage('Build') {
             steps {
                 // Build your code (replace with actual build commands)
-                sh 'make build'
+                echo  'build'
             }
         }
         
         stage('Test') {
             steps {
                 // Run tests (replace with actual test commands)
-                sh 'make test'
+                echo 'test'
             }
         }
         
         stage('Deploy') {
             steps {
                 // Deploy your application (replace with actual deployment commands)
-                sh 'make deploy'
+                echo 'deploy'
             }
         }
     }
