@@ -1,0 +1,49 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout source code from Git repository
+                git branch: '*/master', url: 'https://github.com/vnaidu563/sampleproject.git'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                // Build your code (replace with actual build commands)
+                sh 'make build'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                // Run tests (replace with actual test commands)
+                sh 'make test'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                // Deploy your application (replace with actual deployment commands)
+                sh 'make deploy'
+            }
+        }
+    }
+    
+    post {
+        always {
+            // Clean up or final steps
+        }
+        
+        success {
+            // Actions to take if the pipeline succeeds
+            echo 'Pipeline succeeded!'
+        }
+        
+        failure {
+            // Actions to take if the pipeline fails
+            echo 'Pipeline failed!'
+        }
+    }
+}
