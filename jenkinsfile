@@ -33,7 +33,8 @@ pipeline {
     
     post {
         always {
-            // Clean up or final steps
+            // Dummy step or any other necessary step
+            echo 'Cleanup or final steps'
         }
         
         success {
